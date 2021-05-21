@@ -9,7 +9,7 @@
 - Deploys the AKS in private mode with the Application Gateway Ingress controller using the addon functionalty
 > **Note:** The ingress addon is supported in Terraform version >=2.57
 
-## Ingress controller addon
+## Ingress controller addon code
 
 - The addon is part of the AKS cluster resource, and tells Azure to deploy an Application Gateway Ingress controller as part of the deployment
 
