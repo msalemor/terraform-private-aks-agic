@@ -20,7 +20,7 @@ addon_profile {
 }
 ```
 
-## Terraform code
+## AKS Terraform code
 
 ```terraform
 resource "azurerm_kubernetes_cluster" "privateaks" {
