@@ -1,11 +1,11 @@
 variable "resource_group_name" {
   description = "Name of the resource group."
-  default = "rg-aksdemo-eus-demo"
+  default     = "rg-aksdemo-eus-demo"
 }
 
 variable "location" {
   description = "Location of the cluster."
-  default = "eastus"
+  default     = "eastus"
 }
 
 variable "virtual_network_name" {
@@ -50,12 +50,12 @@ variable "aks_enable_rbac" {
 
 variable "vm_user_name" {
   description = "User name for the VM"
-  default     = "vmadmin"
+  default     = "azureazure"
 }
 
 variable "public_ssh_key_path" {
   description = "Public key path for SSH."
-  default     = "/mnt/c/Users/am885/.ssh/id_rsa.pub"
+  default     = "~/.ssh/id_rsa.pub"
 }
 
 variable "tags" {
