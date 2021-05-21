@@ -1,11 +1,11 @@
 variable "resource_group_name" {
   description = "Name of the resource group."
-  default = "rg-aksdemo2-cus-demo"
+  default = "rg-aksdemo-eus-demo"
 }
 
 variable "location" {
   description = "Location of the cluster."
-  default = "centralus"
+  default = "eastus"
 }
 
 variable "virtual_network_name" {
@@ -13,53 +13,9 @@ variable "virtual_network_name" {
   default     = "vnet-askdemo-eus-demo"
 }
 
-variable "virtual_network_address_prefix" {
-  description = "VNET address prefix"
-  default     = "15.0.0.0/8"
-}
-
-variable "aks_subnet_name" {
-  description = "Subnet Name."
-  default     = "kubesubnet"
-}
-
-variable "aks_subnet_address_prefix" {
-  description = "Subnet address prefix."
-  default     = "15.0.0.0/16"
-}
-
-variable "app_gateway_subnet_address_prefix" {
-  description = "Subnet server IP address."
-  default     = "15.1.0.0/16"
-}
-
-variable "app_gateway_name" {
-  description = "Name of the Application Gateway"
-  default = "ApplicationGateway1"
-}
-
-variable "app_gateway_sku" {
-  description = "Name of the Application Gateway SKU"
-  default = "Standard_v2"
-}
-
-variable "app_gateway_tier" {
-  description = "Tier of the Application Gateway tier"
-  default = "Standard_v2"
-}
-
 variable "aks_name" {
   description = "AKS cluster name"
   default     = "aksdemo"
-}
-variable "aks_dns_prefix" {
-  description = "Optional DNS prefix to use with hosted Kubernetes API server FQDN."
-  default     = "aksdemo"
-}
-
-variable "aks_agent_os_disk_size" {
-  description = "Disk size (in GB) to provision for each of the agent pool nodes. This value ranges from 0 to 1023. Specifying 0 applies the default disk size for that agentVMSize."
-  default     = 40
 }
 
 variable "aks_agent_count" {
@@ -70,11 +26,6 @@ variable "aks_agent_count" {
 variable "aks_agent_vm_size" {
   description = "VM size"
   default     = "Standard_D2_v2"
-}
-
-variable "kubernetes_version" {
-  description = "Kubernetes version"
-  default     = "1.11.5"
 }
 
 variable "aks_service_cidr" {
@@ -94,7 +45,7 @@ variable "aks_docker_bridge_cidr" {
 
 variable "aks_enable_rbac" {
   description = "Enable RBAC on the AKS cluster. Defaults to false."
-  default     = "false"
+  default     = "true"
 }
 
 variable "vm_user_name" {
