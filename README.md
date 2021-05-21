@@ -27,12 +27,13 @@ addon_profile {
 > **Note:** Please note how the addon is being used in the code below
 
 ```terraform
+# Create the AKS Cluster
 resource "azurerm_kubernetes_cluster" "privateaks" {
   resource_group_name = azurerm_resource_group.k8s.name
   location            = azurerm_resource_group.k8s.location
 
-  name       = var.aks_name
-  dns_prefix = var.aks_name
+  name                    = var.aks_name
+  dns_prefix              = var.aks_name
   private_cluster_enabled = true
 
 
@@ -53,13 +54,13 @@ resource "azurerm_kubernetes_cluster" "privateaks" {
   }
 
   role_based_access_control {
-    enabled = true
+    enabled = var.aks_enable_rbac
   }
 
   addon_profile {
     ingress_application_gateway {
-        enabled = true
-        subnet_id = azurerm_subnet.agwSubnet.id
+      enabled   = true
+      subnet_id = azurerm_subnet.agicSubnet.id
     }
   }
 
@@ -67,18 +68,13 @@ resource "azurerm_kubernetes_cluster" "privateaks" {
     network_plugin    = "azure"
     load_balancer_sku = "standard"
     network_policy    = "calico"
-    #dns_service_ip = 
-    #docker_bridge_cidr = 
-    #service_cidr = 
   }
 
-  tags = {
-    Environment = "Development"
-  }
+  tags = var.tags
 
   depends_on = [
     azurerm_subnet.askSubnet,
-    azurerm_subnet.agwSubnet
+    azurerm_subnet.agicSubnet
   ]
 }
 ```
