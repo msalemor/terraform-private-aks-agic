@@ -70,7 +70,7 @@ resource "azurerm_kubernetes_cluster" "privateaks" {
   }
 
   role_based_access_control {
-    enabled = true
+    enabled = var.aks_enable_rbac
   }
 
   addon_profile {
@@ -89,14 +89,10 @@ resource "azurerm_kubernetes_cluster" "privateaks" {
     #service_cidr = 
   }
 
-  tags = {
-    Environment = "Development"
-  }
+  tags = var.tags
 
   depends_on = [
     azurerm_subnet.askSubnet,
     azurerm_subnet.agwSubnet
   ]
 }
-
-
