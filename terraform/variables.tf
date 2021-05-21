@@ -50,7 +50,7 @@ variable "aks_enable_rbac" {
 
 variable "vm_user_name" {
   description = "User name for the VM"
-  default     = "azureazure"
+  default     = "vmadmin"
 }
 
 variable "public_ssh_key_path" {
