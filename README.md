@@ -11,6 +11,8 @@
 
 ## Ingress controller addon
 
+- The addon is part of the AKS cluster resource, and tells Azure to deploy an Application Gateway Ingress controller as part of the deployment
+
 ```terraform
 addon_profile {
     ingress_application_gateway {
@@ -21,6 +23,8 @@ addon_profile {
 ```
 
 ## AKS Terraform code
+
+> **Note:** Please note how the addon is being used in the code below
 
 ```terraform
 resource "azurerm_kubernetes_cluster" "privateaks" {
