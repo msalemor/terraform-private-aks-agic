@@ -45,7 +45,8 @@ variable "aks_docker_bridge_cidr" {
 
 variable "aks_enable_rbac" {
   description = "Enable RBAC on the AKS cluster. Defaults to false."
-  default     = "true"
+  type        = bool
+  default     = true
 }
 
 variable "vm_user_name" {
