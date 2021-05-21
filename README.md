@@ -7,7 +7,7 @@
 - Creates a subnet to host the AKS nodes for the Azure CNI network
 - Creates a subnet for the Application Gateway Ingress controller
 - Deploys the AKS in private mode with the Application Gateway Ingress controller using the addon functionalty
-> **Note:** Addon is supported in Terraform >=2.57
+> **Note:** The ingress addon is supported in Terraform version >=2.57
 
 ## Ingress controller addon
 
