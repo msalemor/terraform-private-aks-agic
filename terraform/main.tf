@@ -11,11 +11,13 @@ terraform {
   }
 }
 
+# Create Resource Group
 resource "azurerm_resource_group" "k8s" {
   location = var.location
   name     = var.resource_group_name
 }
 
+# Create VNet and Subnets
 resource "azurerm_virtual_network" "aksvnet" {
   resource_group_name = azurerm_resource_group.k8s.name
   location            = azurerm_resource_group.k8s.location
@@ -44,6 +46,7 @@ resource "azurerm_subnet" "askSubnet" {
   address_prefixes     = ["10.60.20.0/22"]
 }
 
+# Create the AKS Cluster
 resource "azurerm_kubernetes_cluster" "privateaks" {
   resource_group_name = azurerm_resource_group.k8s.name
   location            = azurerm_resource_group.k8s.location
