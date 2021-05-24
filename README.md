@@ -22,9 +22,10 @@ addon_profile {
 }
 ```
 
-## AKS Terraform code
+## AKS Terraform code snippet
 
-> **Note:** Please note how the addon is being used in the code below
+- > **Note:** Please note how the addon is being used in the code below
+- > **Note:** The full code is available in the terraform folder
 
 ```terraform
 # Create the AKS Cluster
