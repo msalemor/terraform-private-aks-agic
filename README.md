@@ -1,4 +1,4 @@
-# Deploy an AKS cluster with Application Ingress Controller with Terraform
+# Deploy a Private AKS cluster with Application Ingress Controller with Terraform
 
 ## Code steps
 
